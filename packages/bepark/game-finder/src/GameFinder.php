@@ -5,7 +5,6 @@ namespace BePark\GameFinder;
 use BePark\GameFinder\Clients\AbstractClient;
 use BePark\GameFinder\Clients\IgdbClient;
 use BePark\GameFinder\Clients\RawgClient;
-use BePark\GameFinder\Exceptions\ClientInvalidInterfaceException;
 use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -29,23 +28,9 @@ class GameFinder
      */
     private array $clients = [];
 
-    public function __construct(array $clients = [])
+    public function addClient(AbstractClient $client)
     {
-        if (empty($clients)) {
-            // todo: Move default values to config
-            $clients = [
-                new RawgClient(),
-                new IgdbClient(),
-            ];
-        }
-
-        foreach ($clients as $client) {
-            if (!$client instanceof AbstractClient) {
-                throw new ClientInvalidInterfaceException(get_class($client), AbstractClient::class);
-            }
-        }
-
-        $this->clients = $clients;
+        $this->clients[] = $client;
     }
 
     public function search(string $searchQuery, bool $cacheResults = true): array

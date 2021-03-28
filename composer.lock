@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b86a4ea9f548a5e62d1b3af75d90ff1f",
+    "content-hash": "f555e17ab6b0ea7ba2847e1f273ccedb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,22 +64,35 @@
         },
         {
             "name": "bepark/game-finder",
-            "version": "dev-master",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/bepark/game-finder",
-                "reference": "a3ddf3e94bbf2068f2ea84082cd7c0cce8ab9442"
+                "reference": "55a5ca3cdddac6b718312f04729e353218541ebe"
             },
             "require": {
                 "dimuska139/rawg-sdk-php": "^1.1",
                 "illuminate/collections": "^8.34",
+                "lukasoppermann/http-status": "^2.0",
                 "marcreichel/igdb-laravel": "^2.1",
                 "php": "^7.4"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BePark\\GameFinder\\Providers\\GameFinderProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "BePark\\GameFinder\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BePark\\GameFinder\\Tests\\": "tests/"
                 }
             },
             "authors": [

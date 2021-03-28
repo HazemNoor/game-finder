@@ -23,5 +23,12 @@
         "psr-4": {
             "BePark\\GameFinder\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BePark\\GameFinder\\Providers\\GameFinderProvider"
+            ]
+        }
     }
 }

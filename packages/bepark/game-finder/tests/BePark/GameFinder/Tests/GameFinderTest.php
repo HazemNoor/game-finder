@@ -5,26 +5,14 @@ namespace BePark\GameFinder\Tests;
 use BePark\GameFinder\Clients\AbstractClient;
 use BePark\GameFinder\Clients\IgdbClient;
 use BePark\GameFinder\Clients\RawgClient;
-use BePark\GameFinder\Exceptions\ClientInvalidInterfaceException;
 use BePark\GameFinder\GameFinder;
 use BePark\GameFinder\GameResult;
 use Exception;
 use Illuminate\Support\Collection;
-use stdClass;
 use Tests\TestCase;
 
 class GameFinderTest extends TestCase
 {
-    /**
-     * Test Client class must extend AbstractClient
-     */
-    public function testClientInvalidInterfaceException()
-    {
-        $this->expectException(ClientInvalidInterfaceException::class);
-
-        new GameFinder([new stdClass()]); // Providing any wrong class
-    }
-
     /**
      * Test if client throws any type of Exception it won't be thrown and just reported and return an empty Collection
      */
@@ -103,7 +91,9 @@ class GameFinderTest extends TestCase
             ->willReturn($collectionB)
         ;
 
-        $finder = new GameFinder([$clientA, $clientB]);
+        $finder = new GameFinder();
+        $finder->addClient($clientA);
+        $finder->addClient($clientB);
 
         $results = $finder->search('A Game Name', false);
 
