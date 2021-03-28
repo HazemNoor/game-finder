@@ -20,7 +20,7 @@ class GameResult
 
     public function getImage(): ?string
     {
-        // todo: Return a proxy URL from our service instead of the original image URL
+        // todo: May return a proxy URL from our service instead of the original image URL
         return $this->image;
     }
 }
