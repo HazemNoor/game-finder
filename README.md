@@ -13,22 +13,9 @@ git clone git@github.com:HazemNoor/game-finder.git
 cd game-finder
 ```
 
-2. Make sure to have `Docker` installed on your machine, then execute this command to build docker images
+2. Copy file `.env.example` into `.env` and `.env.testing`
 
-```shell
-make build
-```
-
-3. Run this command to execute `composer install`
-
-```shell
-make up
-make install
-```
-
-4. Copy file `.env.example` into `.env` and `.env.testing`
-
-5. Edit files `.env` and `.env.testing` adding values for these constants
+3. Edit files `.env` and `.env.testing` adding values for these constants
 
 ```text
 TWITCH_CLIENT_ID=
@@ -40,7 +27,7 @@ Get these values from their websites
 - [RAWG Video Games Database API](https://api.rawg.io/docs/)
 - [IGDB.com](https://api-docs.igdb.com/ )
 
-6. You many need to update these values related to `Docker` in `.env`
+4. You many need to update these values related to `Docker` in `.env`
 
 ```text
 SERVER_HTTP_PORT=80
@@ -48,6 +35,19 @@ SERVER_HTTPS_PORT=443
 
 USER_ID=1000
 GROUP_ID=1000
+```
+
+5. Make sure to have `Docker` installed on your machine, then execute this command to build docker images
+
+```shell
+make build
+```
+
+6. Run this command to execute `composer install`
+
+```shell
+make up
+make install
 ```
 
 ## Other commands
