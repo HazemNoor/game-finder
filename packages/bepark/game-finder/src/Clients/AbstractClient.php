@@ -9,15 +9,6 @@ use Throwable;
 
 abstract class AbstractClient
 {
-    public function __construct()
-    {
-        $this->initClient();
-    }
-
-    protected function initClient(): void
-    {
-    }
-
     /**
      * @param string $searchQuery
      * @param int    $resultLimit

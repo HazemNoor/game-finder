@@ -12,7 +12,7 @@ class RawgClient extends AbstractClient
 {
     private ApiClient $apiClient;
 
-    protected function initClient(): void
+    public function __construct()
     {
         $this->apiClient = new ApiClient(
             new Config(env('RAWG_CLIENT_API_KEY', ''), 'en')
