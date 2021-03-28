@@ -5,6 +5,7 @@ namespace BePark\GameFinder\Providers;
 use BePark\GameFinder\Clients\IgdbClient;
 use BePark\GameFinder\Clients\RawgClient;
 use BePark\GameFinder\GameFinder;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 class GameFinderProvider extends ServiceProvider
@@ -18,7 +19,7 @@ class GameFinderProvider extends ServiceProvider
     {
         $this->app->bind(
             GameFinder::class,
-            function ($app) {
+            function (Application $app) {
                 $clients = [
                     $app->make(RawgClient::class),
                     $app->make(IgdbClient::class),

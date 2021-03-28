@@ -3,8 +3,6 @@
 namespace BePark\GameFinder;
 
 use BePark\GameFinder\Clients\AbstractClient;
-use BePark\GameFinder\Clients\IgdbClient;
-use BePark\GameFinder\Clients\RawgClient;
 use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -13,13 +11,11 @@ class GameFinder
 {
     /**
      * Result limit per client
-     * todo: Move to config
      */
     private const RESULT_LIMIT = 10;
 
     /**
      * Cache result lifetime
-     * todo: Move to config
      */
     private const CACHE_LIFETIME = '1 hour';
 
