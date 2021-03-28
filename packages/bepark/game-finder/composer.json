@@ -1,0 +1,27 @@
+{
+    "name": "bepark/game-finder",
+    "description": "Game Finder",
+    "authors": [
+        {
+            "name": "Hazem Noor",
+            "email": "hazemnoor@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "dimuska139/rawg-sdk-php": "^1.1",
+        "illuminate/collections": "^8.34",
+        "marcreichel/igdb-laravel": "^2.1",
+        "lukasoppermann/http-status": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BePark\\GameFinder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BePark\\GameFinder\\Tests\\": "tests/"
+        }
+    }
+}
