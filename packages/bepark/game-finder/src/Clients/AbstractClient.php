@@ -22,10 +22,13 @@ abstract class AbstractClient
         try {
             $results = $this->doSearch($searchQuery, $resultLimit);
         } catch (Throwable $e) {
-            $exception = new ClientRuntimeException($e);
+            // Report client error to be investigated later and continue to the next client
+            report(new ClientRuntimeException($e));
 
-            // Report client error to be investigated later and continue to next client
-            report($exception);
+            /**
+             * todo: We may implement Circuit Breaker Algorithm to preventing failures
+             *       from constantly recurring after certain threshold of failures
+             */
         }
 
         return $results;
