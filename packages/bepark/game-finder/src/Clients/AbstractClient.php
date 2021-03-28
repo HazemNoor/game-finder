@@ -26,7 +26,7 @@ abstract class AbstractClient
             report(new ClientRuntimeException($e));
 
             /**
-             * todo: We may implement Circuit Breaker Algorithm to preventing failures
+             * todo: We may implement Circuit Breaker Algorithm to prevent failures
              *       from constantly recurring after certain threshold of failures
              */
         }
