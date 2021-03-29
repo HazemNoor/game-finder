@@ -13,9 +13,13 @@ git clone git@github.com:HazemNoor/game-finder.git
 cd game-finder
 ```
 
-2. Copy file `.env.example` into `.env` and `.env.testing`
+2. Copy file `.env.example` into `.env`
 
-3. Edit files `.env` and `.env.testing` adding values for these constants
+```shell
+cp .env.example .env
+```
+
+3. Edit file `.env` adding values for these constants
 
 ```text
 TWITCH_CLIENT_ID=
