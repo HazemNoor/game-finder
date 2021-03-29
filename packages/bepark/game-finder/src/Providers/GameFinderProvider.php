@@ -2,9 +2,9 @@
 
 namespace BePark\GameFinder\Providers;
 
-use BePark\GameFinder\Clients\ClientFactory;
 use BePark\GameFinder\Clients\IgdbClient;
 use BePark\GameFinder\Clients\RawgClient;
+use BePark\GameFinder\Factories\ClientFactory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

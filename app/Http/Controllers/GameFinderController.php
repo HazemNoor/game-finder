@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GameFinderRequest;
 use BePark\GameFinder\GameFinder;
-use BePark\GameFinder\GameResult;
+use BePark\GameFinder\Models\GameResult;
 use Illuminate\Support\Collection;
 
 class GameFinderController

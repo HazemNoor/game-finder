@@ -1,7 +1,8 @@
 <?php
 
-namespace BePark\GameFinder\Clients;
+namespace BePark\GameFinder\Factories;
 
+use BePark\GameFinder\Clients\AbstractClient;
 use Illuminate\Support\Collection;
 
 class ClientFactory

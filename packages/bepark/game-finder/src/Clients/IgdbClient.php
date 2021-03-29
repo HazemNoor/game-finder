@@ -2,7 +2,7 @@
 
 namespace BePark\GameFinder\Clients;
 
-use BePark\GameFinder\GameResult;
+use BePark\GameFinder\Models\GameResult;
 use Illuminate\Support\Collection;
 use MarcReichel\IGDBLaravel\Models\Cover;
 use MarcReichel\IGDBLaravel\Models\Game;

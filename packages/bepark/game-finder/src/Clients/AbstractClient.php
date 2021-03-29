@@ -3,7 +3,7 @@
 namespace BePark\GameFinder\Clients;
 
 use BePark\GameFinder\Exceptions\ClientRuntimeException;
-use BePark\GameFinder\GameResult;
+use BePark\GameFinder\Models\GameResult;
 use Illuminate\Support\Collection;
 use Throwable;
 
@@ -24,7 +24,6 @@ abstract class AbstractClient
         } catch (Throwable $e) {
             // Report client error to be investigated later and continue to the next client
             report(new ClientRuntimeException($e));
-
             /**
              * todo: We may implement Circuit Breaker Algorithm to prevent failures
              *       from constantly recurring after certain threshold of failures

@@ -2,7 +2,7 @@
 
 namespace BePark\GameFinder;
 
-use BePark\GameFinder\Clients\ClientFactory;
+use BePark\GameFinder\Factories\ClientFactory;
 use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
