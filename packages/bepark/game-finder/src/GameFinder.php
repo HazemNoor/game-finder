@@ -2,7 +2,7 @@
 
 namespace BePark\GameFinder;
 
-use BePark\GameFinder\Clients\AbstractClient;
+use BePark\GameFinder\Clients\ClientFactory;
 use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -19,33 +19,25 @@ class GameFinder
      */
     private const CACHE_LIFETIME = '1 hour';
 
-    /**
-     * @var AbstractClient[]
-     */
-    private array $clients = [];
+    private ClientFactory $clientFactory;
 
-    public function addClient(AbstractClient $client)
+    public function __construct(ClientFactory $clientFactory)
     {
-        $this->clients[] = $client;
+        $this->clientFactory = $clientFactory;
     }
 
-    public function search(string $searchQuery, bool $cacheResults = true): array
+    public function search(string $searchQuery, bool $cacheResults = true): Collection
     {
-        $closure = function () use ($searchQuery) {
+        $closure = function () use ($searchQuery): Collection {
             $results = new Collection();
-
-            foreach ($this->clients as $client) {
-                $results = $results->merge($client->search($searchQuery, self::RESULT_LIMIT));
+            foreach ($this->clientFactory->getClients() as $client) {
+                $results = $client->search($searchQuery, self::RESULT_LIMIT);
+                if ($results->isNotEmpty()) {
+                    return $results;
+                }
             }
 
-            // Unique results by name
-            return array_values(
-                $results->unique(
-                    function (GameResult $result) {
-                        return $result->getName();
-                    }
-                )->all()
-            );
+            return $results;
         };
 
         if ($cacheResults) {

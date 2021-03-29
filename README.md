@@ -1,26 +1,19 @@
 ## About
-
 This laravel application provides an API that displays information about a video game fetched from list of websites
-
 - [RAWG Video Games Database API](https://api.rawg.io/docs/)
 - [IGDB.com](https://api-docs.igdb.com/ )
 
 ## Installation
 1. Fetch project
-
 ```shell
 git clone git@github.com:HazemNoor/game-finder.git
 cd game-finder
 ```
-
 2. Copy file `.env.example` into `.env`
-
 ```shell
 cp .env.example .env
 ```
-
 3. Edit file `.env` adding values for these constants
-
 ```text
 TWITCH_CLIENT_ID=
 TWITCH_CLIENT_SECRET=
@@ -32,7 +25,6 @@ Get these values from their websites
 - [IGDB.com](https://api-docs.igdb.com/ )
 
 4. You many need to update these values related to `Docker` in `.env`
-
 ```text
 SERVER_HTTP_PORT=80
 SERVER_HTTPS_PORT=443
@@ -40,38 +32,28 @@ SERVER_HTTPS_PORT=443
 USER_ID=1000
 GROUP_ID=1000
 ```
-
 5. Make sure to have `docker-compose` installed on your machine, then execute this command to build docker images
-
 ```shell
 make build
 ```
-
 6. Run this command to execute `composer install`
-
 ```shell
 make up
 make install
 ```
 
 ## Other commands
-
 - Run tests
-
 ```shell
 make up
 make test
 ```
-
 - If you need to log in to docker container, use these commands
-
 ```shell
 make up
 make login
 ```
-
 - Stop docker containers
-
 ```shell
 make down
 ```
@@ -90,7 +72,6 @@ Accept: application/vnd.api+json
 ```
 
 **Example API call via CURL**
-
 ```shell
 curl --request GET \
   --url 'http://localhost/api/games?search=Red%20Alert%202' \
@@ -98,7 +79,6 @@ curl --request GET \
 ```
 
 **Sample successful response body**
-
 ```json
 {
   "results": [
@@ -115,17 +95,13 @@ curl --request GET \
 ```
 
 ## How clients work together
-- All Clients are registered to `GameFinder` through `GameFinderProvider`, you can add new clients there
+- All Clients are registered to `ClientFactory` through `GameFinderProvider`, you can add new clients there
 ```php
 $finder->addClient($client);
 ```
-
-- When searching for the Game data, all clients are used to search for Game data and results are aggregated and duplication is removed.
-
-- Results are ordered the same way that is returned from Clients
-
-- Priority of result in case of duplication is, what comes first is kept, what comes later is removed.
-
+- Clients are Consecutively used in the same order they are registered in `ClientFactory`
+- If a Client fails or doesn't return results we continue to use the next Client, otherwise, we just use result from that Client
+- Results are returned in the same order that is returned from Clients
 - If any Error happens in any Client, an Exception `ClientRuntimeException` is reported for further analysis later
 
 ## Testing
@@ -140,7 +116,6 @@ make test
 The coding style used is [PSR-12](https://www.php-fig.org/psr/psr-12/) and is included with the testing command `make test` using [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 
 ## Todo
-
 - Implement [Circuit Breaker Algorithm](https://martinfowler.com/bliki/CircuitBreaker.html) to prevent failures from constantly recurring after a certain threshold of failures in Clients
-
 - Implement [apiDoc](https://apidocjs.com/) for API Documentation
+- Add API Authentication

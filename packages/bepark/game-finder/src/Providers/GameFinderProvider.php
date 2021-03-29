@@ -2,9 +2,9 @@
 
 namespace BePark\GameFinder\Providers;
 
+use BePark\GameFinder\Clients\ClientFactory;
 use BePark\GameFinder\Clients\IgdbClient;
 use BePark\GameFinder\Clients\RawgClient;
-use BePark\GameFinder\GameFinder;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,19 +18,19 @@ class GameFinderProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            GameFinder::class,
+            ClientFactory::class,
             function (Application $app) {
                 $clients = [
                     $app->make(RawgClient::class),
                     $app->make(IgdbClient::class),
                 ];
 
-                $finder = new GameFinder();
+                $factory = new ClientFactory();
                 foreach ($clients as $client) {
-                    $finder->addClient($client);
+                    $factory->addClient($client);
                 }
 
-                return $finder;
+                return $factory;
             }
         );
     }

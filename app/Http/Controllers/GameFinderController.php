@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\GameFinderRequest;
 use BePark\GameFinder\GameFinder;
 use BePark\GameFinder\GameResult;
+use Illuminate\Support\Collection;
 
 class GameFinderController
 {
@@ -26,18 +27,17 @@ class GameFinderController
         return $this->prepareResult($results);
     }
 
-    private function prepareResult(array $results): array
+    private function prepareResult(Collection $results): array
     {
-        $results = array_map(
+        $results = $results->map(
             function (GameResult $result) {
                 return [
                     'name'  => $result->getName(),
                     'image' => $result->getImage(),
                 ];
-            },
-            $results
+            }
         );
 
-        return ['results' => $results];
+        return ['results' => $results->all()];
     }
 }
