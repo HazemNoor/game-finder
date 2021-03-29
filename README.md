@@ -97,7 +97,7 @@ curl --request GET \
 ## How clients work together
 - All Clients are registered to `ClientFactory` through `GameFinderProvider`, you can add new clients there
 ```php
-$finder->addClient($client);
+$factory->addClient($client);
 ```
 - Clients are Consecutively used in the same order they are registered in `ClientFactory`
 - If a Client fails or doesn't return results we continue to use the next Client, otherwise, we just use result from that Client
