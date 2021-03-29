@@ -27,10 +27,6 @@ class ClientDecorator implements ClientInterface
         } catch (Throwable $e) {
             // Report client error to be investigated later and continue to the next client
             report(new ClientRuntimeException($e));
-            /**
-             * todo: We may implement Circuit Breaker Algorithm to prevent failures
-             *       from constantly recurring after certain threshold of failures
-             */
         }
 
         return $results;
