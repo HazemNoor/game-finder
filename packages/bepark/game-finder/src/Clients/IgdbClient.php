@@ -7,9 +7,12 @@ use Illuminate\Support\Collection;
 use MarcReichel\IGDBLaravel\Models\Cover;
 use MarcReichel\IGDBLaravel\Models\Game;
 
-class IgdbClient extends AbstractClient
+class IgdbClient implements ClientInterface
 {
-    protected function doSearch(string $searchQuery, int $resultLimit): Collection
+    /**
+     * @inheritDoc
+     */
+    public function search(string $searchQuery, int $resultLimit): Collection
     {
         $games = Game::search($searchQuery)->offset(0)->limit($resultLimit)->get();
 

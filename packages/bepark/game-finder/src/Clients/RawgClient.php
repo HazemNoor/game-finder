@@ -8,7 +8,7 @@ use Rawg\ApiClient;
 use Rawg\Config;
 use Rawg\Filters\GamesFilter;
 
-class RawgClient extends AbstractClient
+class RawgClient implements ClientInterface
 {
     private ApiClient $apiClient;
 
@@ -19,7 +19,10 @@ class RawgClient extends AbstractClient
         );
     }
 
-    protected function doSearch(string $searchQuery, int $resultLimit): Collection
+    /**
+     * @inheritDoc
+     */
+    public function search(string $searchQuery, int $resultLimit): Collection
     {
         $gamesFilter = (new GamesFilter())
             ->setPage(1)

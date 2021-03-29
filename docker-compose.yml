@@ -38,6 +38,6 @@ services:
       - ~/.ash_history:/home/www-data/.ash_history
     environment:
       - XDEBUG_CONFIG=client_host=${DOCKER_GATEWAY_HOST:-host.docker.internal}
-      - PHP_IDE_CONFIG=serverName=bepark.dom
+      - PHP_IDE_CONFIG=serverName=gamefinder
     networks:
       - backend

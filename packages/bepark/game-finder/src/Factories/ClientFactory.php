@@ -2,13 +2,14 @@
 
 namespace BePark\GameFinder\Factories;
 
-use BePark\GameFinder\Clients\AbstractClient;
+use BePark\GameFinder\Clients\ClientDecorator;
+use BePark\GameFinder\Clients\ClientInterface;
 use Illuminate\Support\Collection;
 
 class ClientFactory
 {
     /**
-     * @var Collection|AbstractClient[]
+     * @var Collection|ClientInterface[]
      */
     private Collection $clients;
 
@@ -17,13 +18,13 @@ class ClientFactory
         $this->clients = new Collection();
     }
 
-    public function addClient(AbstractClient $client)
+    public function addClient(ClientInterface $client)
     {
-        $this->clients->add($client);
+        $this->clients->add(new ClientDecorator($client));
     }
 
     /**
-     * @return Collection|AbstractClient[]
+     * @return Collection|ClientInterface[]
      */
     public function getClients(): Collection
     {
