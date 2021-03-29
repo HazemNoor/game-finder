@@ -41,7 +41,7 @@ USER_ID=1000
 GROUP_ID=1000
 ```
 
-5. Make sure to have `Docker` installed on your machine, then execute this command to build docker images
+5. Make sure to have `docker-compose` installed on your machine, then execute this command to build docker images
 
 ```shell
 make build
