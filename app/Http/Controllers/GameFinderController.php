@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GameFinderRequest;
-use BePark\GameFinder\GameFinder;
-use BePark\GameFinder\Models\GameResult;
+use HazemNoor\GameFinder\GameFinder;
+use HazemNoor\GameFinder\Models\GameResult;
 use Illuminate\Support\Collection;
 
 class GameFinderController

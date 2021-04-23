@@ -1,8 +1,8 @@
 <?php
 
-namespace BePark\GameFinder;
+namespace HazemNoor\GameFinder;
 
-use BePark\GameFinder\Factories\ClientFactory;
+use HazemNoor\GameFinder\Factories\ClientFactory;
 use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;

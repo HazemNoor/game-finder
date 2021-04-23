@@ -1,8 +1,8 @@
 <?php
 
-namespace BePark\GameFinder\Clients;
+namespace HazemNoor\GameFinder\Clients;
 
-use BePark\GameFinder\Models\GameResult;
+use HazemNoor\GameFinder\Models\GameResult;
 use Illuminate\Support\Collection;
 
 interface ClientInterface

@@ -1,9 +1,9 @@
 <?php
 
-namespace BePark\GameFinder\Tests;
+namespace HazemNoor\GameFinder\Tests;
 
-use BePark\GameFinder\Clients\ClientDecorator;
-use BePark\GameFinder\Clients\RawgClient;
+use HazemNoor\GameFinder\Clients\ClientDecorator;
+use HazemNoor\GameFinder\Clients\RawgClient;
 use Exception;
 use Illuminate\Support\Collection;
 use Tests\TestCase;

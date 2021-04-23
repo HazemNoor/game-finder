@@ -1,9 +1,9 @@
 <?php
 
-namespace BePark\GameFinder\Factories;
+namespace HazemNoor\GameFinder\Factories;
 
-use BePark\GameFinder\Clients\ClientDecorator;
-use BePark\GameFinder\Clients\ClientInterface;
+use HazemNoor\GameFinder\Clients\ClientDecorator;
+use HazemNoor\GameFinder\Clients\ClientInterface;
 use Illuminate\Support\Collection;
 
 class ClientFactory

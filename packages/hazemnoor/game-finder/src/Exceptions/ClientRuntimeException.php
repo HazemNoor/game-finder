@@ -1,6 +1,6 @@
 <?php
 
-namespace BePark\GameFinder\Exceptions;
+namespace HazemNoor\GameFinder\Exceptions;
 
 use Exception;
 use Throwable;

@@ -1,6 +1,6 @@
 <?php
 
-namespace BePark\GameFinder\Tests;
+namespace HazemNoor\GameFinder\Tests;
 
 use Lukasoppermann\Httpstatus\Httpstatuscodes;
 use Tests\TestCase;

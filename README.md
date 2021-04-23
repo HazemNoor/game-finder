@@ -105,7 +105,7 @@ $factory->addClient($client);
 - If any Error happens in any Client, an Exception `ClientRuntimeException` is reported for further analysis later
 
 ## Testing
-Testing is divided in two classes `BePark\GameFinder\Tests\ApiTest` and `BePark\GameFinder\Tests\GameFinderTest`
+Testing is divided in two classes `HazemNoor\GameFinder\Tests\ApiTest` and `HazemNoor\GameFinder\Tests\GameFinderTest`
 You can run unit test using these commands
 ```shell
 make up

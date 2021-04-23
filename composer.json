@@ -7,10 +7,10 @@
     "require": {
         "php": "^7.4",
         "ext-json": "*",
-        "bepark/game-finder": "dev-main",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
+        "hazemnoor/game-finder": "dev-main",
         "laravel/framework": "^8.12"
     },
     "require-dev": {
@@ -65,7 +65,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "packages/bepark/game-finder"
+            "url": "packages/hazemnoor/game-finder"
         }
     ]
 }

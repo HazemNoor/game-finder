@@ -1,6 +1,6 @@
 <?php
 
-namespace BePark\GameFinder\Models;
+namespace HazemNoor\GameFinder\Models;
 
 class GameResult
 {

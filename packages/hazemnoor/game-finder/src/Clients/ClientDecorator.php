@@ -1,8 +1,8 @@
 <?php
 
-namespace BePark\GameFinder\Clients;
+namespace HazemNoor\GameFinder\Clients;
 
-use BePark\GameFinder\Exceptions\ClientRuntimeException;
+use HazemNoor\GameFinder\Exceptions\ClientRuntimeException;
 use Illuminate\Support\Collection;
 use Throwable;
 

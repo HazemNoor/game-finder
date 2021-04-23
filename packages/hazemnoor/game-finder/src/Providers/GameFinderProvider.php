@@ -1,10 +1,10 @@
 <?php
 
-namespace BePark\GameFinder\Providers;
+namespace HazemNoor\GameFinder\Providers;
 
-use BePark\GameFinder\Clients\IgdbClient;
-use BePark\GameFinder\Clients\RawgClient;
-use BePark\GameFinder\Factories\ClientFactory;
+use HazemNoor\GameFinder\Clients\IgdbClient;
+use HazemNoor\GameFinder\Clients\RawgClient;
+use HazemNoor\GameFinder\Factories\ClientFactory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

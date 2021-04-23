@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f555e17ab6b0ea7ba2847e1f273ccedb",
+    "content-hash": "faf6c0061fde2e3074ad37efb7e9411c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,50 +61,6 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.3"
             },
             "time": "2021-03-11T06:42:03+00:00"
-        },
-        {
-            "name": "bepark/game-finder",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "packages/bepark/game-finder",
-                "reference": "55a5ca3cdddac6b718312f04729e353218541ebe"
-            },
-            "require": {
-                "dimuska139/rawg-sdk-php": "^1.1",
-                "illuminate/collections": "^8.34",
-                "lukasoppermann/http-status": "^2.0",
-                "marcreichel/igdb-laravel": "^2.1",
-                "php": "^7.4"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BePark\\GameFinder\\Providers\\GameFinderProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BePark\\GameFinder\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "BePark\\GameFinder\\Tests\\": "tests/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Hazem Noor",
-                    "email": "hazemnoor@gmail.com"
-                }
-            ],
-            "description": "Game Finder",
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "brick/math",
@@ -922,6 +878,50 @@
             "time": "2021-03-21T16:25:00+00:00"
         },
         {
+            "name": "hazemnoor/game-finder",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/hazemnoor/game-finder",
+                "reference": "4087f19499aeb02774e85260f3c919d9981d5822"
+            },
+            "require": {
+                "dimuska139/rawg-sdk-php": "^1.1",
+                "illuminate/collections": "^8.34",
+                "lukasoppermann/http-status": "^2.0",
+                "marcreichel/igdb-laravel": "^2.1",
+                "php": "^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HazemNoor\\GameFinder\\Providers\\GameFinderProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HazemNoor\\GameFinder\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "HazemNoor\\GameFinder\\Tests\\": "tests/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Hazem Noor",
+                    "email": "hazemnoor@gmail.com"
+                }
+            ],
+            "description": "Game Finder",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.34.0",
             "source": {
@@ -1401,16 +1401,16 @@
         },
         {
             "name": "marcreichel/igdb-laravel",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcreichel/igdb-laravel.git",
-                "reference": "ff1f4b52d96a368e7418cc04a5015e91af93c148"
+                "reference": "0a092f2fd62866869a734b176e99174f2af28e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcreichel/igdb-laravel/zipball/ff1f4b52d96a368e7418cc04a5015e91af93c148",
-                "reference": "ff1f4b52d96a368e7418cc04a5015e91af93c148",
+                "url": "https://api.github.com/repos/marcreichel/igdb-laravel/zipball/0a092f2fd62866869a734b176e99174f2af28e94",
+                "reference": "0a092f2fd62866869a734b176e99174f2af28e94",
                 "shasum": ""
             },
             "require": {
@@ -1453,7 +1453,7 @@
             ],
             "support": {
                 "issues": "https://github.com/marcreichel/igdb-laravel/issues",
-                "source": "https://github.com/marcreichel/igdb-laravel/tree/2.1.2"
+                "source": "https://github.com/marcreichel/igdb-laravel/tree/2.1.3"
             },
             "funding": [
                 {
@@ -1461,7 +1461,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-02-03T08:54:35+00:00"
+            "time": "2021-04-03T11:30:55+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7368,7 +7368,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "bepark/game-finder": 20
+        "hazemnoor/game-finder": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

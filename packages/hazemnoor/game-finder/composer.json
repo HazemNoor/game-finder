@@ -1,5 +1,5 @@
 {
-    "name": "bepark/game-finder",
+    "name": "hazemnoor/game-finder",
     "description": "Game Finder",
     "authors": [
         {
@@ -16,18 +16,18 @@
     },
     "autoload": {
         "psr-4": {
-            "BePark\\GameFinder\\": "src/"
+            "HazemNoor\\GameFinder\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BePark\\GameFinder\\Tests\\": "tests/"
+            "HazemNoor\\GameFinder\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "BePark\\GameFinder\\Providers\\GameFinderProvider"
+                "HazemNoor\\GameFinder\\Providers\\GameFinderProvider"
             ]
         }
     }

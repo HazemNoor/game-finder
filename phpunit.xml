@@ -12,7 +12,7 @@
 <!--            <directory suffix="Test.php">./tests/Feature</directory>-->
 <!--        </testsuite>-->
         <testsuite name="GameFinder">
-            <directory suffix="Test.php">./packages/bepark/game-finder/tests</directory>
+            <directory suffix="Test.php">./packages/hazemnoor/game-finder/tests</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
